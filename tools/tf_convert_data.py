@@ -18,7 +18,7 @@ a TensorFlow pipeline.
 Usage:
 ```shell
 python tf_convert_data.py \
-    --datset_root=VOCdevkit \
+    --dataset_root=VOCdevkit \
     --year=0712 \
     --split=trainval \
     --output_dir=/tmp/pascalvoc0712_tfrecord
@@ -34,7 +34,7 @@ from datasets import pascalvoc_to_tfrecords, kitti_object_to_tfrecords
 FLAGS = tf.app.flags.FLAGS
 
 tf.app.flags.DEFINE_string(
-    'dataset_name', 'pascalvoc',
+    'dataset_name', 'kitti',
     'The name of the dataset to convert.')
 tf.app.flags.DEFINE_string(
     'dataset_root', None,
@@ -71,3 +71,5 @@ def main(_):
 if __name__ == '__main__':
     tf.app.run()
 
+
+# python tools/tf_convert_data.py --dataset_root="../kitti_root/" --split=train --output_dir=pascalvoc0712_tfrecord

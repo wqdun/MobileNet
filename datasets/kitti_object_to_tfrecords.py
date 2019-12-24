@@ -42,7 +42,7 @@ CLASSES = {
 def _process_image(directory, split, name):
     # Read the image file.
     filename = os.path.join(directory, 'image_2', name + '.png')
-    image_data = tf.gfile.FastGFile(filename, 'r').read()
+    image_data = tf.gfile.FastGFile(filename, 'rb').read()
 
     # Get shape
     img = cv2.imread(filename)
